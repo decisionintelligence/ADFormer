@@ -4,29 +4,29 @@ This repository provides the implementation code for our paper:
 ![The overall framework of ADFormer](./overall_framework.png)
 The following is a detailed description of each folder.
 ## data
-`geo/taxi_zones` contains files that indicate geographic information of NYC, which can be used to plot map. 
+`geo/taxi_zones` contains files representing the geographic information of NYC, which can be used for map visualization. 
 
-Similarly, `xian_hexAddr.txt` includes hexagonal grid addresses of Xi'an, which can be mapped to real-world latitude and longitude. 
+Similarly, `xian_hexAddr.txt` contains hexagonal grid addresses of Xi'an, which can be mapped to real-world geographic coordinates. 
 
-These files, like `NYC_Taxi_origin.pkl` and `NYC_Taxi_destination.pkl`, are stored as 2D arraies. 'origin/destination' means 'the start point and end point of a trip', since we obtain these data from travel order. The first dimension is the number of spatial units and the second is the number of timesteps. They are used to generate input data in `utils/ADFormer_dataset.py`.
+Files such as `NYC_Taxi_origin.pkl` and `NYC_Taxi_destination.pkl` are stored as 2D arrays. "Origin/destination" refers to the start and end points of a trip, as the data are obtained from travel orders. The first dimension is the number of spatial units and the second is the number of timesteps. They are used to generate input data in `utils/ADFormer_dataset.py`.
 ## model
-`module.py` implements the essential components required bt *ADFormer*.
+`module.py` implements the essential components required by *ADFormer*.
 
-`ADFormer.py` constitutes the core part of our method, including the implementation of Attention from both spatial and temporal aspects, as well as the ST-Encoder.
+`ADFormer.py` forms the core of our method, implementing attention mechanisms across both spatial and temporal dimensions, as well as the ST-Encoder.
 ## utils
-`ADFormer_config.py` is the configuration file in our experiments and consists of settings of dataset, model and training process.
+`ADFormer_config.py` is the configuration file used in our experiments, including settings for the dataset, model, and training process.
 
 `ADFormer_dataset.py` serves several purposes:
 
-(1) It processes raw data (eg. data/xxx_xxx_origin.pkl), such as adding external information to it, spliting it according to the window and horizon.
+(1) It processes raw data (eg. data/xxx_xxx_origin.pkl), such as adding external information and splitting it according to the window and horizon.
 
-(2) We get *adjacent/distance/dtw_distance matrixes* there according to the geographic files and raw data files.
+(2) It generates the adjacency, distance, and DTW distance matrices based on the geographic and raw data files.
 
-(3) We aggregate spatial units with *dtw_mx* and obtain the cluster maps.
+(3) It aggregates spatial units using *dtw_mx* and produces cluster maps.
 
-`ADFormer_trainer.py` defines the components and process of training, validation and evaluation.
+`ADFormer_trainer.py` defines the components and procedures for training, validation, and evaluation.
 
-`utils.py` includes the utils needed by experiments.
+`utils.py` includes utility functions used in the experiments.
 
 ## Training
 You can use the following command to train a model:
