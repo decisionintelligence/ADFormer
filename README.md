@@ -27,3 +27,8 @@ These files, like `NYC_Taxi_origin.pkl` and `NYC_Taxi_destination.pkl`, are stor
 `ADFormer_trainer.py` defines the components and process of training, validation and evaluation.
 
 `utils.py` includes the utils needed by experiments.
+
+## Training
+You can use the following command to train a model:
+``` nohup python main.py --dataset_city XIAN --dataset_name XIAN-Taxi --window 6 --horizon 1 > XIAN-Taxi-6-1.log 2>&1 &
+The trained model will be saved in the `log` folder.
