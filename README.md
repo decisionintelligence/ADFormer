@@ -24,4 +24,6 @@ These files, like `NYC_Taxi_origin.pkl` and `NYC_Taxi_destination.pkl`, are stor
 
 (3) We aggregate spatial units with *dtw_mx* and obtain the cluster maps.
 
-`ADFormer_trainer.py`
+`ADFormer_trainer.py` defines the components and process of training, validation and evaluation.
+
+`utils.py` includes the utils needed by experiments.
