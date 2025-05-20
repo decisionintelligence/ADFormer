@@ -34,3 +34,5 @@ You can use the following command to train a model:
 nohup python main.py --dataset_city XIAN --dataset_name XIAN-Taxi --window 6 --horizon 1 > XIAN-Taxi-6-1.log 2>&1 &
 ```
 The trained model will be saved in the `log` folder.
+
+Please note: Since reverse transformation may turn zeros into near-zero values (due to normalization using training data only), MAPE can be distorted. Thus, we compute MAPE only for values greater than 5.
