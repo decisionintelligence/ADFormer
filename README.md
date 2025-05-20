@@ -8,7 +8,7 @@ The following is a detailed description of each folder.
 
 Similarly, `xian_hexAddr.txt` contains hexagonal grid addresses of Xi'an, which can be mapped to real-world geographic coordinates. 
 
-Files such as `NYC_Taxi_origin.pkl` and `NYC_Taxi_destination.pkl` are stored as 2D arrays. "Origin/destination" refers to the start and end points of a trip, as the data are obtained from travel orders. The first dimension is the number of spatial units and the second is the number of timesteps. They are used to generate input data in `utils/ADFormer_dataset.py`.
+Files such as `NYC_Taxi_origin.pkl` and `NYC_Taxi_destination.pkl` are stored as 2D arrays. The "origin/destination" refers to the start and end points of a trip, as the data are obtained from travel orders. The first dimension is the number of spatial units and the second is the number of timesteps. They are used to generate input data in `utils/ADFormer_dataset.py`.
 ## model
 `module.py` implements the essential components required by *ADFormer*.
 
