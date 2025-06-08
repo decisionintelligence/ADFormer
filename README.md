@@ -1,7 +1,7 @@
 This repository provides the implementation code for our paper: 
 
 *ADFormer: Aggregation Differential Transformer for Passenger Demand Forecasting*.
-![The overall framework of ADFormer](./overall_framework.jpg)
+![The overall framework of ADFormer](./Overall_framework.jpg)
 The following is a detailed description of each folder.
 ## data
 `geo/taxi_zones` contains files representing the geographic information of NYC, which can be used for map visualization. 
