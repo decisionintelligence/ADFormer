@@ -6,6 +6,7 @@ import numpy as np
 from scipy.cluster.hierarchy import linkage, fcluster
 from collections import defaultdict
 
+# Adapted from: https://github.com/BUAABIGSCity/PDFormer
 
 def drop_path(x, drop_prob=0., training=False):
     if drop_prob == 0. or not training:
