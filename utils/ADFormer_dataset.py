@@ -12,6 +12,8 @@ from tqdm import tqdm
 from fastdtw import fastdtw
 from model.module import hierarchical_clustering
 
+# Adapted from: https://github.com/BUAABIGSCity/PDFormer
+
 class ADFormerDataset():
 
     def __init__(self, args, logger):
